@@ -1,0 +1,10 @@
+# docker-compose.yml
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "3033:3033"
+    environment:
+      - MONGODB_URI=mongodb://admin:admin123@137.184.5.176/folios

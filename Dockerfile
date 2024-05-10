@@ -1,32 +1,22 @@
-FROM node:21-alpine3.18 as builder
+# Dockerfile
+# Usa una imagen base con Node.js
+FROM node:18
 
-RUN corepack enable && corepack prepare pnpm@latest --activate
-ENV PNPM_HOME=/usr/local/bin
+# Establece el directorio de trabajo
+WORKDIR /usr/src/app
 
-WORKDIR /app
+# Copia el archivo package.json e instala las dependencias
+COPY package*.json ./
+RUN npm install
 
-COPY package*.json pnpm-lock.yaml ./
-
-RUN apk add --no-cache \
-    git 
-
+# Copia todo el código fuente
 COPY . .
-RUN pnpm i
 
-# Exponer el puerto
-EXPOSE 3000
+# Compila TypeScript a JavaScript
+RUN npm run build
 
-RUN pnpm build
+# Expone el puerto 3000
+EXPOSE 3033
 
-#Etapa de producción
-FROM builder as deploy
-
-ARG RAILWAY_STATIC_URL
-ARG PUBLIC_URL
-#ARG PORT
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/package.json /app/pnpm-lock.yaml ./
-
-RUN pnpm install --frozen-lockfile --production
-#CMD ["npm", "start"]
-CMD ["pnpm", "run", "dev"]
+# Comando por defecto para iniciar la aplicación
+CMD ["npm", "start"]
