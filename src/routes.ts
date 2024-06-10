@@ -1,10 +1,10 @@
-// src/routes.ts
-import { Router } from "express";
-import { obtenerNuevoFolio } from "./controllers/folioController";
+import { Router } from 'express';
+import { obtenerNuevoFolio, obtenerPDF, savePDF } from './controllers/folioController';
 
 const router = Router();
 
-// Rutas para la API
-router.get("/api", obtenerNuevoFolio);
+router.get('/nuevo-folio', obtenerNuevoFolio);
+router.get('/pdf/:id', obtenerPDF);
+router.post('/upload', savePDF);
 
 export default router;

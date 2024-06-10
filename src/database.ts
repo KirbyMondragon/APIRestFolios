@@ -1,14 +1,18 @@
-// src/database.ts
-import mongoose from "mongoose";
+import mysql from 'mysql2';
 
-const connectDB = async () => {
-  try {
-    await mongoose.connect("mongodb://137.184.5.176/folios");
-    console.log("MongoDB connected");
-  } catch (error) {
-    console.error("MongoDB connection error", error);
-    process.exit(1);
-  }
-};
+const connectDB = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'uprsj'
+});
+
+connectDB.connect((err: mysql.QueryError | null) => {
+    if (err) {
+        console.error('Error connecting to the database:', err);
+        return;
+    }
+    console.log('Connected to the database');
+});
 
 export default connectDB;
