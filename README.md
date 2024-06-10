@@ -28,7 +28,7 @@ Para instalar el proyecto, sigue estos pasos:
 
 1. Clona el repositorio:
     ```sh
-    git clone https://github.com/tecniva/Agente-conversacional.git
+    git clone https://github.com/KirbyMondragon/APIRestFolios.git
     ```
 
 2. Navega al directorio del proyecto:
