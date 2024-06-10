@@ -19,7 +19,7 @@
 
 <h2> Description: </h2>
 
-<p>- 🔭 🌱 </p>
+<p>- 🔭 🌱OJO que necesitas Typescript </p>
 <p>- 💬 API for folios⚡ </p>
 
 
@@ -33,7 +33,7 @@ Para instalar el proyecto, sigue estos pasos:
 
 2. Navega al directorio del proyecto:
     ```sh
-    cd Agente-conversacional
+    cd APIRestFolios
     ```
 
 3. Instala las dependencias:
