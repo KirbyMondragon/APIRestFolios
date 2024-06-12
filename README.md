@@ -50,6 +50,17 @@ Para instalar el proyecto, sigue estos pasos:
     </picture>
 </div>
 
+1. Guardar pdf a la base de datos :
+    ```sh
+    http://localhost:3001/api/upload
+    ```
+
+1. Recuperar un pdf a la base de datos :
+    ```sh
+    http://localhost:3001/download/1
+    ```
+el ultimo numero es el ID de tu pdf
+
 <h2> Contact me</h2>
 <p align="center">
   <a href="https://www.linkedin.com/feed/">
