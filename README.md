@@ -40,6 +40,10 @@ Para instalar el proyecto, sigue estos pasos:
     ```sh
     npm install
     ```
+4. actualizar de codigo JS a Typescript del proyecto:
+    ```sh
+    npm run build
+    ```
 4. Para iniciar el proyecto:
     ```sh
     npm start
@@ -52,7 +56,7 @@ Para instalar el proyecto, sigue estos pasos:
 
 1. Guardar pdf a la base de datos :
     ```sh
-    http://localhost:3001/api/upload
+    http://localhost:3001/upload
     ```
 
 1. Recuperar un pdf a la base de datos :
